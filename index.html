@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrador y Descifrador César</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Cifrador y Descifrador César</h1>
+    <div class="flex-container">
+        <div class="container">
+            <h2>Cifrador César</h2>
+            <div class="input-group">
+                <label for="inputText">Texto:</label>
+                <textarea id="inputText" placeholder="Introduce tu texto aquí"></textarea>
+            </div>
+            <div class="input-group">
+                <label for="shift">Desplazamiento:</label>
+                <input type="range" id="shift" min="1" max="25" value="1" oninput="updateShiftValue('shift', 'shiftValue')">
+                <span id="shiftValue">1</span>
+            </div>
+            <div class="input-group">
+                <label for="outputText">Texto cifrado:</label>
+                <textarea id="outputText" placeholder="Texto cifrado" readonly></textarea>
+            </div>
+            <button onclick="cipher()">Cifrar</button>
+        </div>
+        
+        <div class="container">
+            <h2>Descifrador César</h2>
+            <div class="input-group">
+                <label for="decipherInputText">Texto cifrado:</label>
+                <textarea id="decipherInputText" placeholder="Introduce el texto cifrado aquí"></textarea>
+            </div>
+            <div class="input-group">
+                <label for="decipherShift">Desplazamiento:</label>
+                <input type="range" id="decipherShift" min="1" max="25" value="1" oninput="updateShiftValue('decipherShift', 'decipherShiftValue')">
+                <span id="decipherShiftValue">1</span>
+            </div>
+            <div class="input-group">
+                <label for="decipherOutputText">Texto descifrado:</label>
+                <textarea id="decipherOutputText" placeholder="Texto descifrado" readonly></textarea>
+            </div>
+            <button onclick="decipher()">Descifrar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
